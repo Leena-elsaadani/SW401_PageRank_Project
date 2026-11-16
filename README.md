@@ -150,6 +150,18 @@ Run the reproducible correctness tests:
 ./tests/run_tests.sh
 ```
 
+Run the reproducible sequential/OpenMP performance benchmarks (GCC with OpenMP and Python/Matplotlib required):
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r benchmarks/requirements.txt
+python3 benchmarks/run_performance.py --dataset tests/data/tiny_graph.txt --no-report
+python3 benchmarks/run_performance.py --repetitions 3
+```
+
+On Ubuntu/WSL, install `python3-full` first if venv/pip is unavailable. The tiny graph command validates the workflow only; it is not a LiveJournal performance result. See [`benchmarks/README.md`](benchmarks/README.md) for setup, output locations, resource checks, and the opt-in full-dataset command.
+
 Run PageRank on the cleaned dataset or a sample:
 
 ```bash

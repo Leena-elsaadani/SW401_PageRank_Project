@@ -1,0 +1,4 @@
+label,run,profiler,exit_code,wall_seconds,user_seconds,system_seconds,max_rss_kb,major_faults,minor_faults,voluntary_context_switches,involuntary_context_switches
+csr_full,1,time,0,39.56,37.86,1.05,386720,0,128020,318,1707
+csr_full,2,time,0,38.72,37.62,0.75,386852,0,128014,138,398
+csr_full,3,time,0,40.45,37.60,0.80,386784,0,128015,93,408

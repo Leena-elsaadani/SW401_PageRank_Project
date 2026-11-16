@@ -1,0 +1,4 @@
+label,runs,successful_runs,profiler,median_wall_seconds,median_max_rss_mb,median_cache_references,median_cache_misses,cache_miss_percent,median_cycles,median_instructions,instructions_per_cycle
+csr_100MB,3,3,time,4.43,145.31640625,,,,,,
+csr_500MB,3,3,time,20.15,258.49609375,,,,,,
+csr_full,3,3,time,39.56,377.71875,,,,,,

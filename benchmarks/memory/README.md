@@ -36,6 +36,14 @@ benchmarks/memory/run_microbenchmarks.sh \
   data/samples/livejournal_100MB.txt
 ```
 
+After running the microbenchmarks in `results/memory/100MB`, `500MB`,
+and `full`, consolidate their medians and plots with:
+
+```bash
+python3 benchmarks/memory/plot_microbenchmarks.py \
+  results/memory --plots plots/memory
+```
+
 - `csr_locality` builds the same outgoing-CSR shape used by PageRank and compares ordered row traversal with a deterministic shuffled row traversal. Both modes perform the same edge/rank reads and produce the same checksum; traversal order is the independent variable.
 - `false_sharing` compares adjacent per-thread counters with 64-byte cache-line-padded counters at 1, 2, 4, and 8 threads.
 - `sync_overhead` measures the cost per OpenMP barrier and small reduction at the same thread counts.

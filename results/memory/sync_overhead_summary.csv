@@ -1,0 +1,9 @@
+threads,operation,trials,median_nanoseconds_per_round
+1,barrier,3,176.697
+1,reduction,3,289.9645
+2,barrier,3,2913.9351
+2,reduction,3,5759.402
+4,barrier,3,4804.2135
+4,reduction,3,8970.7423
+8,barrier,3,6445.5584
+8,reduction,3,12670.0735

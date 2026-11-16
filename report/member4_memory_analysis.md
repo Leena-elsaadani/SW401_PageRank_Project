@@ -6,7 +6,7 @@ The project stores the directed graph in Compressed Sparse Row (CSR) form. `row_
 
 The actual sequential and OpenMP PageRank executables must be measured with `benchmarks/memory/profile_command.sh`. Each configuration should be run at least three times on the same machine and summarized with `benchmarks/memory/summarize.py`. Required configurations are the available dataset sizes and OpenMP thread counts 1, 2, 4, and 8. Record median elapsed time, peak RSS, page faults, context switches, and—when `perf` counters are available—cache references, cache misses, cycles, instructions, and IPC.
 
-No PageRank measurements are included in this handoff because the repository does not yet contain the sequential or OpenMP implementation and the LiveJournal dataset is not currently available. Values must be inserted only after executing the real programs.
+No PageRank measurements are included because the repository does not yet contain the sequential or OpenMP implementation. The LiveJournal dataset is now available and was used for the standalone CSR experiments below. PageRank values must be inserted only after executing the real programs.
 
 ## Experiments
 
@@ -38,9 +38,55 @@ Profile the 100 MiB prefix, 500 MiB prefix, and full graph when memory permits. 
 
 Add equivalent rows for the 500 MiB and full datasets. Include the generated cache-miss and peak-memory plots when counters are available.
 
-## WSL/perf limitation
+## Measured standalone memory experiments
 
-This environment currently has no `perf` executable, so cache-miss counts cannot be claimed from this machine. The profiling wrapper automatically falls back to `/usr/bin/time`, which still provides elapsed time, peak RSS, page faults, and context-switch counts. For the final cache analysis, install Linux performance tools in an environment that exposes hardware counters, or explicitly report the limitation and use the fallback metrics. `gprof` identifies time-consuming functions but does not measure cache misses and should not be described as a cache profiler.
+These measurements were collected on November 16, 2026 on an Intel Core i7-12650H with 16 logical CPUs, Linux 7.2.13 (Fedora 43), GCC 15.3.1, and `-O3`. Each reported value is the median of three trials. The environment differs from the WSL environment described in the project workflow, so final team comparisons must use one consistent machine.
+
+The complete build-and-scan profiles show the expected increase in memory footprint and preprocessing time:
+
+| Dataset | Edges | Median wall time (s) | Median peak RSS (MiB) |
+|---|---:|---:|---:|
+| 100 MiB prefix | 8,015,157 | 4.43 | 145.32 |
+| 500 MiB prefix | 37,672,977 | 20.15 | 258.50 |
+| Full graph | 68,993,773 | 39.56 | 377.72 |
+
+The inner CSR traversal produced identical checksums for both orders. Shuffling source-row order was consistently slower:
+
+| Dataset | Ordered median (s) | Shuffled median (s) | Shuffled slowdown |
+|---|---:|---:|---:|
+| 100 MiB prefix | 0.02113 | 0.09467 | 4.48× |
+| 500 MiB prefix | 0.08458 | 0.29069 | 3.44× |
+| Full graph | 0.18491 | 1.01702 | 5.50× |
+
+This supports keeping source rows in contiguous ranges. It does not by itself measure PageRank convergence or prove a hardware cache-miss count.
+
+The false-sharing benchmark reported median billions of counter updates per second:
+
+| Threads | Packed | Cache-line padded |
+|---:|---:|---:|
+| 1 | 1.275 | 2.239 |
+| 2 | 2.555 | 4.293 |
+| 4 | 3.841 | 5.204 |
+| 8 | 6.340 | 6.669 |
+
+Padding improved throughput in all tested configurations, although the benefit narrowed at eight threads. The benchmark isolates one pattern and should motivate inspection of per-thread PageRank state rather than be treated as a direct PageRank speedup.
+
+Synchronization cost increased with thread count:
+
+| Threads | Barrier (ns/round) | Reduction (ns/round) |
+|---:|---:|---:|
+| 1 | 176.70 | 289.96 |
+| 2 | 2,913.94 | 5,759.40 |
+| 4 | 4,804.21 | 8,970.74 |
+| 8 | 6,445.56 | 12,670.07 |
+
+The trend reinforces the recommendation to avoid redundant barriers and reductions inside PageRank iterations.
+
+Generated data is stored under `results/memory/`; the corresponding plots are `plots/memory/csr_locality.png`, `false_sharing.png`, `sync_overhead.png`, `profile_runtime.png`, and `peak_memory.png`.
+
+## perf limitation
+
+This environment currently has no `perf` executable, so cache-miss counts cannot be claimed from this machine. The profiling wrapper automatically fell back to `/usr/bin/time`, which provided elapsed time, peak RSS, page faults, and context-switch counts. For the final cache analysis, install Linux performance tools in an environment that exposes hardware counters, or explicitly report the limitation and use the fallback metrics. `gprof` identifies time-consuming functions but does not measure cache misses and should not be described as a cache profiler.
 
 ## Optimization recommendations
 

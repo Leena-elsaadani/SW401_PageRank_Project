@@ -1,0 +1,8 @@
+wall_seconds;39.56
+user_seconds;37.86
+system_seconds;1.05
+max_rss_kb;386720
+major_faults;0
+minor_faults;128020
+voluntary_context_switches;318
+involuntary_context_switches;1707

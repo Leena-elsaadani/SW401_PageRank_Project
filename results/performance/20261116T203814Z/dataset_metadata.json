@@ -1,0 +1,30 @@
+[
+  {
+    "name": "livejournal_500MB.txt",
+    "path": "/mnt/d/Y4S1/Parallel and Distributed Computing/Project/Parallel Project/data/samples/livejournal_500MB.txt",
+    "kind": "prefix_sample",
+    "state": "available",
+    "bytes": 524287992,
+    "sha256": "0ffc2842637305c8f179e5ac4a663f2e09578f563747b2ffc6c3819c002c2adc",
+    "expected_documentation": {
+      "kind": "prefix_sample",
+      "expected_edges": 37672977,
+      "expected_bytes": 524287992
+    },
+    "validation": "matches_documented_counts",
+    "validation_notes": [
+      "Prefix of original edge ordering; observed node count is max ID plus one, not assumed to be the full-graph count.",
+      "Observed node count is 4,847,571 (max vertex ID + 1 in this graph), not assumed full-graph node count."
+    ],
+    "resource_check": {
+      "input_bytes": 524287992,
+      "available_system_memory_bytes": 3428921344,
+      "working_set_estimate_bytes": 1073741824,
+      "working_set_estimate_is_measured": false,
+      "minimum_memory_reserve_bytes": 1073741824,
+      "decision": "allowed"
+    },
+    "observed_nodes": 4847571,
+    "observed_directed_edges": 37672977
+  }
+]

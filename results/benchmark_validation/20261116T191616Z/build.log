@@ -1,0 +1,4 @@
+command=/usr/bin/g++ -std=c++17 -O3 -fopenmp '/mnt/d/Y4S1/Parallel and Distributed Computing/Project/Parallel Project/src/sequential/graph.cpp' '/mnt/d/Y4S1/Parallel and Distributed Computing/Project/Parallel Project/src/sequential/pagerank.cpp' '/mnt/d/Y4S1/Parallel and Distributed Computing/Project/Parallel Project/src/openmp/pagerank_omp.cpp' '/mnt/d/Y4S1/Parallel and Distributed Computing/Project/Parallel Project/benchmarks/performance_harness.cpp' -I '/mnt/d/Y4S1/Parallel and Distributed Computing/Project/Parallel Project/src/sequential' -o '/mnt/d/Y4S1/Parallel and Distributed Computing/Project/Parallel Project/build/performance_harness'
+compile_seconds=7.682680155
+exit_status=0
+

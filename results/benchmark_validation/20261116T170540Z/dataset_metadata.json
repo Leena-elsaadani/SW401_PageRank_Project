@@ -1,0 +1,45 @@
+[
+  {
+    "name": "tiny_graph.txt",
+    "path": "/mnt/d/Y4S1/Parallel and Distributed Computing/Project/Parallel Project/tests/data/tiny_graph.txt",
+    "kind": "tiny_validation_fixture",
+    "state": "available",
+    "bytes": 157,
+    "sha256": "4b54aefcd12d407051f275d0380f1690278f2081e78456efcebb8b6245b5dd9c",
+    "expected_documentation": {},
+    "validation": "matches_documented_counts",
+    "validation_notes": [
+      "Fixture run is workflow validation only; not a LiveJournal experiment.",
+      "Fixture run is workflow validation only; not a LiveJournal experiment.",
+      "Fixture run is workflow validation only; not a LiveJournal experiment.",
+      "Fixture run is workflow validation only; not a LiveJournal experiment.",
+      "Fixture run is workflow validation only; not a LiveJournal experiment.",
+      "Fixture run is workflow validation only; not a LiveJournal experiment.",
+      "Fixture run is workflow validation only; not a LiveJournal experiment.",
+      "Fixture run is workflow validation only; not a LiveJournal experiment.",
+      "Fixture run is workflow validation only; not a LiveJournal experiment.",
+      "Fixture run is workflow validation only; not a LiveJournal experiment.",
+      "Fixture run is workflow validation only; not a LiveJournal experiment.",
+      "Fixture run is workflow validation only; not a LiveJournal experiment.",
+      "Fixture run is workflow validation only; not a LiveJournal experiment.",
+      "Fixture run is workflow validation only; not a LiveJournal experiment.",
+      "Fixture run is workflow validation only; not a LiveJournal experiment.",
+      "Fixture run is workflow validation only; not a LiveJournal experiment.",
+      "Fixture run is workflow validation only; not a LiveJournal experiment.",
+      "Fixture run is workflow validation only; not a LiveJournal experiment.",
+      "Fixture run is workflow validation only; not a LiveJournal experiment.",
+      "Fixture run is workflow validation only; not a LiveJournal experiment.",
+      "Fixture run is workflow validation only; not a LiveJournal experiment."
+    ],
+    "resource_check": {
+      "input_bytes": 157,
+      "available_system_memory_bytes": 3371712512,
+      "working_set_estimate_bytes": 1073741824,
+      "working_set_estimate_is_measured": false,
+      "minimum_memory_reserve_bytes": 1073741824,
+      "decision": "allowed"
+    },
+    "observed_nodes": 6,
+    "observed_directed_edges": 8
+  }
+]

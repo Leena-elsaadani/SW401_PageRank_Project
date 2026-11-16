@@ -1,62 +1,148 @@
-
 # SW401 – PageRank on LiveJournal
 
-## Project Overview
+## 1. Project Overview
 
-This project implements and evaluates the PageRank algorithm using the SNAP LiveJournal social network dataset.
+This project focuses on implementing and evaluating the PageRank algorithm using the SNAP LiveJournal social network dataset as part of the SW401 – Parallel and Distributed Systems course.
 
-The project explores:
-- Sequential PageRank implementation in C++.
-- Parallel PageRank implementation using OpenMP.
-- Performance evaluation and speedup analysis.
-- Memory hierarchy and cache behavior.
+The project explores sequential and parallel implementations of PageRank and investigates their performance, scalability, and memory behavior.
 
-## Dataset
+The main objectives are:
 
-Dataset: SNAP LiveJournal
+- Implement a sequential PageRank algorithm using C++.
+- Develop a parallel PageRank implementation using OpenMP.
+- Evaluate performance using different thread counts.
+- Analyze execution time, speedup, and parallel efficiency.
+- Investigate memory hierarchy, cache behavior, and data locality.
 
-Official source:
+## 2. Dataset
+
+**Dataset:** SNAP LiveJournal Social Network
+
+**Official source:**  
 https://snap.stanford.edu/data/soc-LiveJournal1.html
 
-Original dataset statistics:
-- Nodes: 4,847,571
-- Edges: 68,993,773
+### Original Dataset Statistics
 
-The raw dataset is not stored in this repository because of its size.
+| Property | Value |
+|---|---:|
+| Number of nodes | 4,847,571 |
+| Number of edges | 68,993,773 |
+| Dataset type | Directed graph |
 
-## Preprocessing
+The dataset represents the LiveJournal online social network.
+
+The original dataset is not stored in this repository because of its large size. Each team member can download it from the official SNAP source and run the preprocessing script.
+
+## 3. Preprocessing
 
 The preprocessing script is located at:
 
 `preprocessing/preprocess.py`
 
-It:
-- Reads the original edge list.
-- Skips comment and blank lines.
+It performs the following operations:
+
+- Reads the original edge-list dataset.
+- Skips comment lines and blank lines.
 - Validates edge records.
-- Generates a cleaned edge list.
-- Creates smaller sample datasets.
+- Generates a cleaned edge-list dataset.
+- Creates smaller sample datasets for testing.
 
-## Environment
+### Preprocessing Results
 
-- Ubuntu 24.04 (WSL2)
-- G++ 13.3.0
-- OpenMP support
-- Python 3
+| Dataset | Edges | File size |
+|---|---:|---:|
+| Cleaned dataset | 68,993,773 | 1,011,604,076 bytes |
+| 100 MB sample | 8,015,157 | 104,857,589 bytes |
+| 500 MB sample | 37,672,977 | 524,287,992 bytes |
 
-## Project Structure
+No invalid records were found during preprocessing.
+
+Generated datasets are kept locally and excluded from GitHub because of their size.
+
+## 4. Development Environment
+
+The project is developed and tested using the following environment:
+
+- Operating System: Ubuntu 24.04 (WSL2)
+- C++ Compiler: G++ 13.3.0
+- Parallel Programming: OpenMP
+- Python: Python 3
+- Version Control: Git and GitHub
+- IDE: Visual Studio Code
+
+## 5. Repository Structure
 
 ```text
 SW401_Project/
+│
 ├── data/
+│   ├── raw/
+│   ├── processed/
+│   └── samples/
+│
 ├── preprocessing/
+│   └── preprocess.py
+│
 ├── src/
+│   ├── sequential/
+│   └── openmp/
+│
+├── tests/
+│
+├── benchmarks/
+│
 ├── results/
+│
 ├── plots/
+│
 ├── report/
+│
+├── .gitignore
 └── README.md
 ```
 
-## Team
+### Folder Description
 
-SW401 – Parallel and Distributed Systems
+| Folder | Purpose |
+|---|---|
+| `data/` | Stores the raw, processed, and sample datasets locally. |
+| `preprocessing/` | Contains scripts for dataset preprocessing. |
+| `src/sequential/` | Contains the sequential PageRank implementation. |
+| `src/openmp/` | Contains the OpenMP parallel implementation. |
+| `tests/` | Contains correctness and validation tests. |
+| `benchmarks/` | Contains benchmarking scripts and experiment configurations. |
+| `results/` | Stores experimental results and measurements. |
+| `plots/` | Stores performance graphs and visualizations. |
+| `report/` | Contains project documentation and the final report. |
+
+## 6. PageRank Algorithm
+
+PageRank measures the importance of nodes in a directed graph.
+
+The PageRank equation is:
+
+\[
+PR(v) = \frac{1-d}{N} + d\sum_{u \rightarrow v}\frac{PR(u)}{outdegree(u)}
+\]
+
+Where:
+
+- \(PR(v)\): PageRank score of node \(v\).
+- \(d\): Damping factor, typically 0.85.
+- \(N\): Total number of nodes.
+- \(u \rightarrow v\): An edge from node \(u\) to node \(v\).
+- \(outdegree(u)\): Number of outgoing edges from node \(u\).
+
+Dangling nodes (nodes with no outgoing edges) must also be handled by redistributing their rank equally among all nodes.
+
+## 7. Team
+
+**Course:** SW401 – Parallel and Distributed Systems
+
+**Team size:** 4 members
+
+All team members contribute to the implementation, testing, performance evaluation, and final project documentation.
+
+
+**Project:** PageRank on LiveJournal  
+**Course:** SW401 – Parallel and Distributed Systems

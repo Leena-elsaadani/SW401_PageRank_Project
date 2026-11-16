@@ -1,0 +1,15 @@
+{
+  "run_id": "20261116T202720Z",
+  "status": "completed",
+  "started_at_utc": "2026-11-16T20:27:23+00:00",
+  "completed_attempts": 30,
+  "requested_attempts": 30,
+  "missing_datasets": [],
+  "run_directory": "/mnt/d/Y4S1/Parallel and Distributed Computing/Project/Parallel Project/results/performance/20261116T202720Z",
+  "build_status": "success",
+  "last_completed_order": 30,
+  "last_outcome": "success",
+  "finished_at_utc": "2026-11-16T20:35:21+00:00",
+  "failed_measured_attempts": 0,
+  "report_path": "/mnt/d/Y4S1/Parallel and Distributed Computing/Project/Parallel Project/results/performance/20261116T202720Z/generated_report.md"
+}

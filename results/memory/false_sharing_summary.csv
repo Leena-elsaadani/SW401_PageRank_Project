@@ -1,0 +1,9 @@
+threads,layout,trials,median_updates_per_second
+1,cache_line_padded,3,2238966707.9084334
+1,packed,3,1275088318.9924152
+2,cache_line_padded,3,4293224668.9548125
+2,packed,3,2555120333.3921013
+4,cache_line_padded,3,5203976358.335404
+4,packed,3,3840578360.3764462
+8,cache_line_padded,3,6668705067.515637
+8,packed,3,6340078648.675637

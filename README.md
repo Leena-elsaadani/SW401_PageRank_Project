@@ -156,7 +156,7 @@ Run the reproducible sequential/OpenMP performance benchmarks (GCC with OpenMP a
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r benchmarks/requirements.txt
-python3 benchmarks/run_performance.py --dataset tests/data/tiny_graph.txt --no-report
+python3 benchmarks/run_performance.py --dataset tests/data/tiny_graph.txt
 python3 benchmarks/run_performance.py --repetitions 5
 ```
 

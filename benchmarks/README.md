@@ -30,8 +30,7 @@ The committed tiny graph validates compilation, execution, thread selection, res
 python benchmarks/run_performance.py \
   --dataset tests/data/tiny_graph.txt \
   --output-root results/benchmark_validation \
-  --plots-root plots/benchmark_validation \
-  --no-report
+  --plots-root plots/benchmark_validation
 ```
 
 Run the focused Python metric tests with:

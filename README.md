@@ -60,15 +60,3 @@ SW401_Project/
 ## Team
 
 SW401 – Parallel and Distributed Systems
-
-## Current Progress
-
-- [x] Dataset downloaded and inspected
-- [x] Preprocessing script implemented
-- [x] Cleaned dataset generated
-- [x] 100 MB and 500 MB samples generated
-- [ ] Sequential PageRank implementation
-- [ ] OpenMP PageRank implementation
-- [ ] Performance evaluation
-- [ ] Memory hierarchy experiments
-- [ ] Final report and demonstration

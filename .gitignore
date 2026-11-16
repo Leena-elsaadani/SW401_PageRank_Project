@@ -24,3 +24,8 @@ build/
 
 # Editor files
 .vscode/
+
+# PageRank compiled executables
+/sequential_pagerank
+/openmp_pagerank
+/tests/test_pagerank

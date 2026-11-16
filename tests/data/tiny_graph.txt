@@ -1,0 +1,10 @@
+# Directed graph used by memory-tool smoke tests
+# Includes a cycle, a dangling node (5), and a self-loop (4 -> 4)
+0 1
+0 2
+1 2
+2 0
+2 3
+3 2
+3 5
+4 4

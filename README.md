@@ -135,7 +135,31 @@ Where:
 
 Dangling nodes (nodes with no outgoing edges) must also be handled by redistributing their rank equally among all nodes.
 
-## 7. Team
+## 7. Quick Start
+
+Build the sequential and OpenMP implementations from the project root:
+
+```bash
+g++ -std=c++17 -O3 src/sequential/graph.cpp src/sequential/pagerank.cpp src/sequential/main.cpp -I src/sequential -o sequential_pagerank
+g++ -std=c++17 -O3 -fopenmp src/sequential/graph.cpp src/sequential/pagerank.cpp src/openmp/pagerank_omp.cpp src/openmp/main.cpp -I src -I src/openmp -I src/sequential -o openmp_pagerank
+```
+
+Run the reproducible correctness tests:
+
+```bash
+./tests/run_tests.sh
+```
+
+Run PageRank on the cleaned dataset or a sample:
+
+```bash
+./sequential_pagerank --graph data/processed/livejournal_clean.txt --damping 0.85 --tol 1e-8 --max-iter 100
+./openmp_pagerank --graph data/samples/livejournal_100MB.txt --damping 0.85 --tol 1e-8 --max-iter 100 --threads 4
+```
+
+The sequential and OpenMP implementations use the same damping factor, tolerance, and convergence criterion, and they are validated against each other on small directed graphs.
+
+## 8. Team
 
 **Course:** SW401 – Parallel and Distributed Systems
 

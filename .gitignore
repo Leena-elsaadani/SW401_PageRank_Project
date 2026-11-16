@@ -1,7 +1,13 @@
-# Large datasets
+
+# Large datasets - do not upload
 data/raw/*
 data/processed/*
 data/samples/*
+
+# Keep folder structure
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/samples/.gitkeep
 
 # Python
 __pycache__/

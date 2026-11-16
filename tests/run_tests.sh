@@ -6,7 +6,7 @@ OUTPUT_BIN="${ROOT_DIR}/tests/test_pagerank"
 
 mkdir -p "${ROOT_DIR}/tests"
 
-g++ -std=c++17 -O3 -fopenmp \
+"${CXX:-g++}" -std=c++17 -O3 -fopenmp \
   "${ROOT_DIR}/src/sequential/graph.cpp" \
   "${ROOT_DIR}/src/sequential/pagerank.cpp" \
   "${ROOT_DIR}/src/openmp/pagerank_omp.cpp" \

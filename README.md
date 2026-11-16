@@ -157,10 +157,10 @@ python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r benchmarks/requirements.txt
 python3 benchmarks/run_performance.py --dataset tests/data/tiny_graph.txt --no-report
-python3 benchmarks/run_performance.py --repetitions 3
+python3 benchmarks/run_performance.py --repetitions 5
 ```
 
-On Ubuntu/WSL, install `python3-full` first if venv/pip is unavailable. The tiny graph command validates the workflow only; it is not a LiveJournal performance result. See [`benchmarks/README.md`](benchmarks/README.md) for setup, output locations, resource checks, and the opt-in full-dataset command.
+On Ubuntu/WSL, install `python3-full` first if venv/pip is unavailable. The tiny graph command validates the workflow only; it is not a LiveJournal performance result. Normal runs write `generated_report.md` inside each unique results run directory and never overwrite the hand-authored report. Use `--update-report` only when intentionally replacing it. The benchmark explicitly passes the required `1e-6` tolerance; the sequential/OpenMP CLI defaults remain `1e-8`. See [`benchmarks/README.md`](benchmarks/README.md) for setup, output locations, resource checks, and full-dataset commands.
 
 Run PageRank on the cleaned dataset or a sample:
 

@@ -1,0 +1,234 @@
+{
+  "timestamp_utc": "2026-11-16T17:05:41+00:00",
+  "run_id": "20261116T170540Z",
+  "operating_system": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "kernel": "6.18.54.1-microsoft-standard-WSL2",
+  "linux_distribution": "Ubuntu 24.04.5 LTS",
+  "wsl_detected": true,
+  "wsl_version": "W\u0000S\u0000L\u0000 \u0000v\u0000e\u0000r\u0000s\u0000i\u0000o\u0000n\u0000:\u0000 \u00003\u0000.\u00000\u0000.\u00003\u0000.\u00000\u0000\n\u0000\n\u0000K\u0000e\u0000r\u0000n\u0000e\u0000l\u0000 \u0000v\u0000e\u0000r\u0000s\u0000i\u0000o\u0000n\u0000:\u0000 \u00006\u0000.\u00001\u00008\u0000.\u00005\u00004\u0000.\u00001\u0000-\u00001\u0000\n\u0000\n\u0000W\u0000S\u0000L\u0000g\u0000 \u0000v\u0000e\u0000r\u0000s\u0000i\u0000o\u0000n\u0000:\u0000 \u00001\u0000.\u00000\u0000.\u00007\u00009\u0000\n\u0000\n\u0000M\u0000S\u0000R\u0000D\u0000C\u0000 \u0000v\u0000e\u0000r\u0000s\u0000i\u0000o\u0000n\u0000:\u0000 \u00001\u0000.\u00002\u0000.\u00007\u00003\u00009\u00001\u0000\n\u0000\n\u0000D\u0000i\u0000r\u0000e\u0000c\u0000t\u00003\u0000D\u0000 \u0000v\u0000e\u0000r\u0000s\u0000i\u0000o\u0000n\u0000:\u0000 \u00001\u0000.\u00006\u00001\u00001\u0000.\u00001\u0000-\u00008\u00001\u00005\u00002\u00008\u00005\u00001\u00001\u0000\n\u0000\n\u0000D\u0000X\u0000C\u0000o\u0000r\u0000e\u0000 \u0000v\u0000e\u0000r\u0000s\u0000i\u0000o\u0000n\u0000:\u0000 \u00001\u00000\u0000.\u00000\u0000.\u00002\u00006\u00001\u00000\u00000\u0000.\u00001\u0000-\u00002\u00004\u00000\u00003\u00003\u00001\u0000-\u00001\u00004\u00003\u00005\u0000.\u0000g\u0000e\u0000-\u0000r\u0000e\u0000l\u0000e\u0000a\u0000s\u0000e\u0000\n\u0000\n\u0000W\u0000i\u0000n\u0000d\u0000o\u0000w\u0000s\u0000 \u0000v\u0000e\u0000r\u0000s\u0000i\u0000o\u0000n\u0000:\u0000 \u00001\u00000\u0000.\u00000\u0000.\u00002\u00006\u00002\u00000\u00000\u0000.\u00009\u00004\u00005\u00007\u0000\n\u0000\n\u0000",
+  "cpu_model": "11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz",
+  "physical_core_count": 4,
+  "logical_processor_count": 8,
+  "smt_status": "enabled or logical count exceeds physical core count",
+  "available_system_memory_bytes": 3373125632,
+  "available_system_memory_gib": 3.141,
+  "peak_rss_measurement": "Linux getrusage(RUSAGE_SELF), KiB, process high-water mark including graph load",
+  "cpu_governor": "unavailable",
+  "wsl_memory_configuration": "unavailable",
+  "compiler": "/usr/bin/g++",
+  "compiler_version": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "compiler_flags": "-std=c++17 -O3 -fopenmp",
+  "python_version": "3.12.3",
+  "git": {
+    "branch": "member3-benchmarking",
+    "commit": "d59af5fce93268f5b00038dc8cf6632d24afb435",
+    "working_tree_dirty": true
+  },
+  "omp_environment": {
+    "OMP_DYNAMIC": "FALSE",
+    "OMP_NUM_THREADS": "per-run requested team size",
+    "OMP_PLACES": "cores",
+    "OMP_PROC_BIND": "close"
+  },
+  "configuration": {
+    "thread_counts": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "repetitions": 3,
+    "warmups": 1,
+    "random_seed": 4013,
+    "damping": 0.85,
+    "tolerance": 1e-06,
+    "max_iterations": 100,
+    "comparison_tolerance": 1e-06
+  },
+  "tolerance_note": "project_default_tolerance",
+  "requested_datasets": [
+    {
+      "name": "tiny_graph.txt",
+      "path": "/mnt/d/Y4S1/Parallel and Distributed Computing/Project/Parallel Project/tests/data/tiny_graph.txt",
+      "kind": "tiny_validation_fixture",
+      "state": "available",
+      "bytes": 157,
+      "sha256": "4b54aefcd12d407051f275d0380f1690278f2081e78456efcebb8b6245b5dd9c",
+      "expected_documentation": {},
+      "validation": "not_run",
+      "validation_notes": [],
+      "resource_check": {
+        "input_bytes": 157,
+        "available_system_memory_bytes": 3371712512,
+        "working_set_estimate_bytes": 1073741824,
+        "working_set_estimate_is_measured": false,
+        "minimum_memory_reserve_bytes": 1073741824,
+        "decision": "allowed"
+      }
+    }
+  ],
+  "execution_order": [
+    {
+      "order": 1,
+      "dataset": "tiny_graph.txt",
+      "phase": "warmup",
+      "repetition": 1,
+      "implementation": "openmp",
+      "threads": 8
+    },
+    {
+      "order": 2,
+      "dataset": "tiny_graph.txt",
+      "phase": "warmup",
+      "repetition": 1,
+      "implementation": "openmp",
+      "threads": 4
+    },
+    {
+      "order": 3,
+      "dataset": "tiny_graph.txt",
+      "phase": "warmup",
+      "repetition": 1,
+      "implementation": "openmp",
+      "threads": 1
+    },
+    {
+      "order": 4,
+      "dataset": "tiny_graph.txt",
+      "phase": "warmup",
+      "repetition": 1,
+      "implementation": "openmp",
+      "threads": 2
+    },
+    {
+      "order": 5,
+      "dataset": "tiny_graph.txt",
+      "phase": "warmup",
+      "repetition": 1,
+      "implementation": "sequential",
+      "threads": 1
+    },
+    {
+      "order": 6,
+      "dataset": "tiny_graph.txt",
+      "phase": "measured",
+      "repetition": 1,
+      "implementation": "sequential",
+      "threads": 1
+    },
+    {
+      "order": 7,
+      "dataset": "tiny_graph.txt",
+      "phase": "measured",
+      "repetition": 1,
+      "implementation": "openmp",
+      "threads": 1
+    },
+    {
+      "order": 8,
+      "dataset": "tiny_graph.txt",
+      "phase": "measured",
+      "repetition": 1,
+      "implementation": "openmp",
+      "threads": 8
+    },
+    {
+      "order": 9,
+      "dataset": "tiny_graph.txt",
+      "phase": "measured",
+      "repetition": 1,
+      "implementation": "openmp",
+      "threads": 4
+    },
+    {
+      "order": 10,
+      "dataset": "tiny_graph.txt",
+      "phase": "measured",
+      "repetition": 1,
+      "implementation": "openmp",
+      "threads": 2
+    },
+    {
+      "order": 11,
+      "dataset": "tiny_graph.txt",
+      "phase": "measured",
+      "repetition": 2,
+      "implementation": "openmp",
+      "threads": 2
+    },
+    {
+      "order": 12,
+      "dataset": "tiny_graph.txt",
+      "phase": "measured",
+      "repetition": 2,
+      "implementation": "openmp",
+      "threads": 4
+    },
+    {
+      "order": 13,
+      "dataset": "tiny_graph.txt",
+      "phase": "measured",
+      "repetition": 2,
+      "implementation": "sequential",
+      "threads": 1
+    },
+    {
+      "order": 14,
+      "dataset": "tiny_graph.txt",
+      "phase": "measured",
+      "repetition": 2,
+      "implementation": "openmp",
+      "threads": 1
+    },
+    {
+      "order": 15,
+      "dataset": "tiny_graph.txt",
+      "phase": "measured",
+      "repetition": 2,
+      "implementation": "openmp",
+      "threads": 8
+    },
+    {
+      "order": 16,
+      "dataset": "tiny_graph.txt",
+      "phase": "measured",
+      "repetition": 3,
+      "implementation": "openmp",
+      "threads": 2
+    },
+    {
+      "order": 17,
+      "dataset": "tiny_graph.txt",
+      "phase": "measured",
+      "repetition": 3,
+      "implementation": "openmp",
+      "threads": 4
+    },
+    {
+      "order": 18,
+      "dataset": "tiny_graph.txt",
+      "phase": "measured",
+      "repetition": 3,
+      "implementation": "sequential",
+      "threads": 1
+    },
+    {
+      "order": 19,
+      "dataset": "tiny_graph.txt",
+      "phase": "measured",
+      "repetition": 3,
+      "implementation": "openmp",
+      "threads": 1
+    },
+    {
+      "order": 20,
+      "dataset": "tiny_graph.txt",
+      "phase": "measured",
+      "repetition": 3,
+      "implementation": "openmp",
+      "threads": 8
+    }
+  ],
+  "resource_guard_override": false,
+  "report_updated_explicitly": false
+}
